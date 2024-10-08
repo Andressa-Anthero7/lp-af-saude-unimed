@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <!-- TAG GOOGLE ANALITYCS -->
+    <!-- Google tag (gtag.js)
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6BM2R6KZFM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6BM2R6KZFM');
+    </script> -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AF Saúde e Benefícios - Unimed</title>
+
+    <!-- NORMALIZE.CSS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+
+
+    <!-- Jquery CDN --> 
+     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+    <!-- Boostrap 4 CDN  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Font Awesome 5 CDN -->
+    <script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo-index.css' %}">
+    <style>
+        @media(min-width:1024px){
+            header{
+
+                max-height: 6em;
+            }
+
+            #container{
+                background-image: url("{% static 'img/hospital-unimed-v7.png' %}");
+                background-repeat: no-repeat;
+                background-position:380px -5px;
+                min-height: 950px;
+
+            }
+        }
+    </style>
+
+    <script type="text/javascript" src="{% static 'js/script-index.js' %}"></script>
+
+
+
+</head>
+<body>
+    <!-- Header -->
+      <header class="m-0 p-0 ">
+            <div id="div-logo" class="col-12 text-center">
+                <img src="{% static 'img/logo.png' %}" class="img img-fluid m-0 p-0  " id="img-logo" alt="LOGO MARCA">
+
+                <span class="col-8 text-center m-0 p-0">
+                    <img src="{% static 'img/logo_unimed.png' %}" class="img img-fluid " id="img-logo-plano" alt="LOGO MARCA DO PLANO DE SAÚDE">
+                </span>
+
+                 
+            </div>
+        </header>  
+
+    
+
+    <!-- Container -->
+    <div class="container-fluid  p-2 mt-2" id="container">
+
+       
+        
+
+        <div id="conteudo" class="font-weight-bold" >
+                <!-- COPY DA LP -->
+                <div id="copy-lp" class="text-center p-2">
+                    
+                    <div id="text-copy-lp" class=" text-white p-3 col-lg-5">
+                        <h1 id="header-contrate-plano">CONTRATE SEU PLANO</h1>
+                        
+                        <!-- IMG DESTAQUE PARA MOBILE (VISIVIEL SOMENTE EM MOBILE)-->
+                        <img src="{% static 'img/hospital-unimed-v7.png' %}" id="destaque-mobile" class=" m-0 p-0">
+
+
+                        <!-- FORMULÁRIO DE LEADS -->
+                        <div id="div-form" class="bg-white rounded text-dark border border-dark ">
+                            <!--HEADER DO FORMULÁRIO -->
+                            <div class="p-2">
+                                <h3 class="p-1">Obtenha sua cotação!!</h3>
+                                <h5>Preencha formulário e garanta seu orçamento personalizado!!!</h5>
+                            </div>
+                            <!--FORMULARIO -->
+                            <form class="form p-2" id="form">
+                                <!-- CAMPOS DO FORMULÁRIO -->
+                                <div id="campos-form" class="p-3">
+
+                                    <!-- CAMPO NOME -->
+                                    <div class="p-1 ">
+                                        <label for="nome">NOME</label>
+                                        <input type="text" id="nome" name="nome" class="form-control" >
+                                        <br>
+                                    </div>
+
+                                    <!-- CAMPO WHATSAPP -->
+                                   <div class="p-2">
+                                        <label for="whatsapp">WHATSAPP</label>
+                                        <input type="text" id="whatsapp" name="whatsapp"class="form-control" >
+                                        <br>
+                                    </div>
+
+                                    <!-- CAMPO CONCORDO COM OS TERMOS DE USO INCLUINDO TERMOS DE USO EM ANEXO -->
+                                    <div class="p-1">
+                                        <input type="checkbox" id="aceito-termos" name="aceito_termos" >
+                                        <label for="aceito-termos">Aceito os contato de da AF Saúde........</label>
+                                        <br>
+                                    </div>
+                                    <br>
+
+                                    <div class="p-3">
+
+                                        <input type="submit" name="btn-enviar" value="Obter Cotação" class="btn btn-lg btn-warning ">
+                                    </div>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        <!-- FINAL DO FORMULÁRIO LEADS -->   
+                    </div>
+                   
+                    
+
+                
+                </div>
+                <!-- COPY DA LP -->
+
+
+                <!-- BENEFÍCIOS DO PLANO -->
+                <div id="beneficios-plano-saude" class="p-3 m-0 ">
+                    <!-- HEADER DO SESSÃO BENEFÍCIOS -->
+                    <div class="bg-header-beneficios">
+                        <img src="{% static 'img/logo_unimed.png' %}" class="img img-fluid m-0 p-0" id="logo-plano-sessao-beneficios">
+                    </div>
+                    <!-- FINAL DO HEADER SESSÃO BENEFÍCIOS -->
+                </div>
+                <!-- CARD DECK -->
+                <div class="card-deck p-2 text-center  ">
+                     <h1 class="text-white text-center col-12 pb-2  ">Confira os benefícios que os planos</h1>
+                      <div class="card">
+                        <div class="card-body">
+                          <i class="fas fa-hospital  font-size-icons"></i>
+                          <h5 class="card-title">Hospital</h5>
+                          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><small class="text-muted">Short text here</small></p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-body">
+                          <i class="fas fa-clinic-medical font-size-icons"></i>
+                          <h5 class="card-title">Pronto Atendimento</h5>
+                          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                          <p class="card-text"><small class="text-muted">Short text here</small></p>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-body">
+                          <i class="fas fa-user-md font-size-icons"></i>
+                          <h5 class="card-title">Médicos Especialistas</h5>
+                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                          <p class="card-text"><small class="text-muted">Short text here</small></p>
+                        </div>
+                      </div>
+
+                </div>
+                <!-- FINAL CARD DECK -->
+
+                <!-- FINAL  BENEFÍCIOS DA HAPVIDA -->
+
+
+        </div>
+        <!-- FINAL DO CONTEUDO -->
+
+       
+
+    </div>
+    <!-- FINAL DO Container -->
+
+    
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
