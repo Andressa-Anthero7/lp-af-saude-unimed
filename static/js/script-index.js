@@ -1,37 +1,50 @@
-$( document ).ready(function() {
-    
-    //iniciar tempo de navegação
-    function abreModal(){
-        var timeoverModal = true;
-        var inputFocus = $('input')
-        if(inputFocus.is(':focus')){
-           var formFocus = true;
+    $( document ).ready(function() {
+    // Evento quando o mouse entra no botão com ID 'btn-card-1'
+        $(document).on('mouseenter', '#btn-card-1', function() {
+            setTimeout(function() {
+                $('#card-1').addClass('col-12').css({'transform': 'initial'});
+                $('small').addClass('btn-voltar').html('Voltar'); // Adiciona a classe 'btn-voltar' e altera o texto
+                $('#card-2').hide(); // Esconde o card-2
+                $('#card-3').hide(); // Esconde o card-3
+            }, 1000); // Aplica a mudança após 1 segundo
+        });
+
+        // Usa um evento de clique separado para o botão que foi adicionado dinamicamente
+        $(document).on('click', '.btn-voltar', function() { // Seleciona o botão com a classe 'btn-voltar'
+            $('#card-1').removeClass('col-12'); // Remove a classe col-12 do card-1
+            $('#card-1').show(); // Mostra o card 1
+            $('#card-2').show(); // Mostra o card 2
+            $('#card-3').show(); // Mostra o card 3
+            $('small').removeClass('btn-voltar').html(''); // Remove a classe 'btn-voltar' e limpa o texto
+        });
+        
+
+        /*$(document).on('mouseleave', '#card-1', function() { // Quando o mouse sai do card-1
+            $('#card-1').removeClass('col-12'); // Remove a classe col-12 do card-1 se necessário
+            $('.card').show(); // Mostra todos os cards novamente
+        });*/
+
+
+
+    $('#card-2').hover(
+        function() { // Quando o mouse entra no card-1
+            $('#card-2').show().addClass('col-12');;
+            $('#card-1').hide();
+            $('#card-3').hide();
+        },
+        function() { // Quando o mouse sai do card-1
+            $('.card').show(); // Mostra todos os cards novamente
         }
-        else{
-            var formFocus = false;
+    );
+
+    $('#card-3').hover(
+        function() { // Quando o mouse entra no card-1
+            $('#card-3').show().addClass('col-12');;
+            $('#card-1').hide();
+            $('#card-2').hide();
+        },
+        function() { // Quando o mouse sai do card-1
+            $('.card').show(); // Mostra todos os cards novamente
         }
-        //alert(timeoverModal)
-        // Se o timeover for true - abre modal
-        if(timeoverModal == true && formFocus == false){
-            //alert('abriu modal')
-        }else{
-            //alert('nao abriu modal')
-        }
-
-
-
-    }
-
-
-    const tempoNavegacao = setTimeout(abreModal,5000)
-
-    //se timeover for igual true - abrir modal com acesso ao whatsapp
-
-    
-
-
-
-
-    //se tempo for igual e maior a 20 segundos e o formulario não esteja em focus - não abrir modal
-    //se focus no formulario for maior que 30 segundos - dai sim abre o modal com o whatsapp
+    );
 });

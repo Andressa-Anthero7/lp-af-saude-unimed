@@ -31,6 +31,8 @@
 
     <!-- Font Awesome 5 CDN -->
     <script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
+
+    
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilo-index.css' %}">
     <style>
@@ -47,10 +49,28 @@
                 min-height: 950px;
 
             }
+
+            .modal-body{
+                background-image: url("{% static 'img/bg-modal-unimed-v3.png' %}");
+                background-repeat: no-repeat;
+                background-position: center -750px;
+                height: 100%;
+                /*background: rgb(0, 104, 55, 1);
+                background: -moz-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
+                background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
+                color: white;*/
+
+            }
+
+            .img-card{
+                max-height: 200px;
+            }
         }
     </style>
 
-    <script type="text/javascript" src="{% static 'js/script-index.js' %}"></script>
+    <!--<script type="text/javascript" src="{% static 'js/script-index.js' %}"></script>-->
+    <script type="text/javascript" src="{% static 'js/script-modal.js' %}"></script>
 
 
 
@@ -151,32 +171,171 @@
                 <!-- CARD DECK -->
                 <div class="card-deck p-2 text-center  ">
                      <h1 class="text-white text-center col-12 pb-2  ">Confira os benefícios que os planos</h1>
-                      <div class="card">
+                      <div id="card-1" class="card">
                         <div class="card-body">
                           <i class="fas fa-hospital  font-size-icons"></i>
                           <h5 class="card-title">Hospital</h5>
+                          <img class="img img-fluid rounded " src="{% static 'img/unidade-1.png' %}">
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Short text here</small></p>
+
+                          <!-- Trigger do Modal CARD 1 -->
+                          <button id="btn-card-1" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-card-1">
+                            <small class="text-muted">Ampliar</small>
+                          </button>
+                            
                         </div>
                       </div>
+                      <!-- FINAL DO CARD 1 -->
+                      <!-- MODAL CARD 1 -->
+                        <div class="modal fade" id="modal-card-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header ">
+                                
+                                <h5 class="text-center">Cuide da sua saúde com qualidade e confiança!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body text-white">
+                                <h3  id="exampleModalLabel" class="modal-title">Unimed São Carlos - Unidade 1</h3>
+                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-1.png' %}">
+                                <div class="mt-3 p-1 ">
+                                     Na Unimed São Carlos - Unidade 1, você encontra um atendimento médico completo, com profissionais especializados prontos para cuidar de você e da sua família. Oferecemos consultas, exames e tratamentos em diversas especialidades, tudo em um ambiente acolhedor e com tecnologia de ponta.
+                                </div>
+                                <div class="p-2">
+                                    <ul>
+                                        <h5>✨ O que oferecemos:</h5>
+                                        <li class="p-1">Atendimento humanizado</li>
+                                        <li class="p-1">Especialidades médicas variadas</li>
+                                        <li class="p-1">Exames laboratoriais e de imagem</li>
+                                        <li class="p-1">20 Leitos de Cuidados Intensivos Adultos (CIA): Estrutura completa para atender casos críticos com a máxima atenção e segurança.</li>
+                                        <li class="p-1">Centro Cirúrgico Moderno: Com 7 salas equipadas com tecnologia de ponta para garantir a eficácia em todos os procedimentos.</li>
+                                        <li class="p-1">Conforto em Quartos: Acomodações projetadas para o conforto do paciente e acompanhantes, incluindo TV, poltronas e ar-condicionado</li>
+                                        <li class="p-1">Acompanhantes Liberados: Garantimos a presença de acompanhantes para pacientes clínicos ou cirúrgicos, independentemente da acomodação.</li>
+                                        <li class="p-1">Centro Avançado de Diagnóstico por Imagem: Equipamentos de última geração para diagnósticos precisos e rápidos</li>
+                                        <li class="p-1">Procedimentos cirúrgicos com segurança</li>
+                                    </ul>
+                                </div>
+                               
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-light p-2 close" data-dismiss="modal"><i class="fas fa-chevron-circle-left mr-1"></i>Voltar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- FINAL DO MODAL CARD 1 -->
 
-                      <div class="card">
+                        <!-- CARD 2 -->
+                      <div id="card-2" class="card">
                         <div class="card-body">
                           <i class="fas fa-clinic-medical font-size-icons"></i>
                           <h5 class="card-title">Pronto Atendimento</h5>
+                          <img class="img img-fluid rounded" src="{% static 'img/unidade-2.png' %}">
                           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                          <p class="card-text"><small class="text-muted">Short text here</small></p>
+                          <!-- Trigger do Modal CARD 2 -->
+                          <button id="btn-card-2" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-card-2">
+                            <small class="text-muted">Ampliar</small>
+                          </button>
                         </div>
                       </div>
+                      <!-- FINAL CARD 2 -->
+                        <!-- MODAL CARD 2 -->
+                        <div class="modal fade" id="modal-card-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header ">
+                                
+                                <h5 class="text-center">Cuide da sua saúde com qualidade e confiança!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body text-white">
+                                <h3  id="exampleModalLabel" class="modal-title">Unimed São Carlos - Unidade 2</h3>
+                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-2.png' %}">
+                                <div class="mt-3 p-1 ">
+                                     Na Unimed São Carlos - Unidade 1, você encontra um atendimento médico completo, com profissionais especializados prontos para cuidar de você e da sua família. Oferecemos consultas, exames e tratamentos em diversas especialidades, tudo em um ambiente acolhedor e com tecnologia de ponta.
+                                </div>
+                                <div class="p-2">
+                                    <ul>
+                                        <h5>✨ O que oferecemos:</h5>
+                                        <li class="p-1">Atendimento humanizado</li>
+                                        <li class="p-1">Especialidades médicas variadas</li>
+                                        <li class="p-1">Exames laboratoriais e de imagem</li>
+                                        <li class="p-1">20 Leitos de Cuidados Intensivos Adultos (CIA): Estrutura completa para atender casos críticos com a máxima atenção e segurança.</li>
+                                        <li class="p-1">Centro Cirúrgico Moderno: Com 7 salas equipadas com tecnologia de ponta para garantir a eficácia em todos os procedimentos.</li>
+                                        <li class="p-1">Conforto em Quartos: Acomodações projetadas para o conforto do paciente e acompanhantes, incluindo TV, poltronas e ar-condicionado</li>
+                                        <li class="p-1">Acompanhantes Liberados: Garantimos a presença de acompanhantes para pacientes clínicos ou cirúrgicos, independentemente da acomodação.</li>
+                                        <li class="p-1">Centro Avançado de Diagnóstico por Imagem: Equipamentos de última geração para diagnósticos precisos e rápidos</li>
+                                        <li class="p-1">Procedimentos cirúrgicos com segurança</li>
+                                    </ul>
+                                </div>
+                               
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-light p-2 close" data-dismiss="modal"><i class="fas fa-chevron-circle-left mr-1"></i>Voltar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- FINAL DO MODAL CARD 2 -->
 
-                      <div class="card">
+                        <!-- CARD 3 -->
+                      <div id="card-3" class="card">
                         <div class="card-body">
                           <i class="fas fa-user-md font-size-icons"></i>
                           <h5 class="card-title">Médicos Especialistas</h5>
+                          <img class="img img-fluid rounded" src="{% static 'img/unidade-1.png' %}">
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                          <p class="card-text"><small class="text-muted">Short text here</small></p>
+                           <!-- Trigger do Modal CARD 2 -->
+                          <button id="btn-card-3" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-card-3">
+                            <small class="text-muted">Ampliar</small>
+                          </button>
                         </div>
                       </div>
+                      <!-- FINAL CARD 3 -->
+                        <!-- MODAL CARD 3 -->
+                        <div class="modal fade" id="modal-card-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header ">
+                                
+                                <h5 class="text-center">Cuide da sua saúde com qualidade e confiança!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body text-white">
+                                <h3  id="exampleModalLabel" class="modal-title">Médicos Especialistas</h3>
+                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-2.png' %}">
+                                <div class="mt-3 p-1 ">
+                                     Na Unimed São Carlos - Unidade 1, você encontra um atendimento médico completo, com profissionais especializados prontos para cuidar de você e da sua família. Oferecemos consultas, exames e tratamentos em diversas especialidades, tudo em um ambiente acolhedor e com tecnologia de ponta.
+                                </div>
+                                <div class="p-2">
+                                    <ul>
+                                        <h5>✨ O que oferecemos:</h5>
+                                        <li class="p-1">Atendimento humanizado</li>
+                                        <li class="p-1">Especialidades médicas variadas</li>
+                                        <li class="p-1">Exames laboratoriais e de imagem</li>
+                                        <li class="p-1">20 Leitos de Cuidados Intensivos Adultos (CIA): Estrutura completa para atender casos críticos com a máxima atenção e segurança.</li>
+                                        <li class="p-1">Centro Cirúrgico Moderno: Com 7 salas equipadas com tecnologia de ponta para garantir a eficácia em todos os procedimentos.</li>
+                                        <li class="p-1">Conforto em Quartos: Acomodações projetadas para o conforto do paciente e acompanhantes, incluindo TV, poltronas e ar-condicionado</li>
+                                        <li class="p-1">Acompanhantes Liberados: Garantimos a presença de acompanhantes para pacientes clínicos ou cirúrgicos, independentemente da acomodação.</li>
+                                        <li class="p-1">Centro Avançado de Diagnóstico por Imagem: Equipamentos de última geração para diagnósticos precisos e rápidos</li>
+                                        <li class="p-1">Procedimentos cirúrgicos com segurança</li>
+                                    </ul>
+                                </div>
+                               
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-light p-2 close" data-dismiss="modal"><i class="fas fa-chevron-circle-left mr-1"></i>Voltar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- FINAL DO MODAL CARD 3 -->
 
                 </div>
                 <!-- FINAL CARD DECK -->
