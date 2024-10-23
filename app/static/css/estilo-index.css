@@ -58,8 +58,14 @@ li{
 
 small{
 	font-size: 0.6em;
-	line-height:0em;
+	line-height:-10em;
 }
+
+#btn-enviar:disabled {
+    
+    cursor: not-allowed; /* Muda o cursor para indicar que não está disponível */
+}
+
 
 
 
