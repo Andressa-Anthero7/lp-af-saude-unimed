@@ -35,41 +35,8 @@
     
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilo-index.css' %}">
-    <style>
-        @media(min-width:1024px){
-            header{
-
-                max-height: 6em;
-            }
-
-            #container{
-                background-image: url("{% static 'img/hospital-unimed-v7.png' %}");
-                background-repeat: no-repeat;
-                background-position:380px -5px;
-                min-height: 950px;
-
-            }
-
-            .modal-body{
-                background-image: url("{% static 'img/bg-modal-unimed-v3.png' %}");
-                background-repeat: no-repeat;
-                background-position: center -750px;
-                height: 100%;
-                /*background: rgb(0, 104, 55, 1);
-                background: -moz-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-                background: -webkit-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-                background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-                color: white;*/
-
-            }
-
-            .img-card{
-                max-height: 200px;
-            }
-        }
-    </style>
-
-    <!--<script type="text/javascript" src="{% static 'js/script-index.js' %}"></script>-->
+   
+    <script type="text/javascript" src="{% static 'js/script-index.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/script-modal.js' %}"></script>
 
 
@@ -109,7 +76,7 @@
 
 
                         <!-- FORMULÁRIO DE LEADS -->
-                        <div id="div-form" class="bg-white rounded text-dark border border-dark ">
+                        <div id="div-form" class="bg-white rounded text-dark border border-dark m-0 p-0 ">
                             <!--HEADER DO FORMULÁRIO -->
                             <div class="p-2">
                                 <h3 class="p-1">Obtenha sua cotação!!</h3>
@@ -121,23 +88,28 @@
                                 <div id="campos-form" class="p-3">
 
                                     <!-- CAMPO NOME -->
-                                    <div class="p-1 ">
+                                    <div class="p-0 m-0">
                                         <label for="nome">NOME</label>
                                         <input type="text" id="nome" name="nome" class="form-control" >
                                         <br>
                                     </div>
 
                                     <!-- CAMPO WHATSAPP -->
-                                   <div class="p-2">
+                                   <div class="p-0 m-0">
                                         <label for="whatsapp">WHATSAPP</label>
                                         <input type="text" id="whatsapp" name="whatsapp"class="form-control" >
                                         <br>
                                     </div>
 
                                     <!-- CAMPO CONCORDO COM OS TERMOS DE USO INCLUINDO TERMOS DE USO EM ANEXO -->
-                                    <div class="p-1">
-                                        <input type="checkbox" id="aceito-termos" name="aceito_termos" >
-                                        <label for="aceito-termos">Aceito os contato de da AF Saúde........</label>
+                                    <div class="p-0 m-0">
+                                       
+                                        <label for="aceito-termos">
+                                             <input type="checkbox" id="aceito-termos" name="aceito_termos" >
+                                            <small class="text-center text-dark text-justify">
+                                                Declaro que li e aceito a Política de Privacidade. Autorizo o uso de meus dados pessoais, fornecidos neste formulário, para as finalidades de envio de informações e ofertas relacionadas aos planos de saúde. Estou ciente de que meus dados serão tratados em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD), e que poderei revogar meu consentimento a qualquer momento, conforme descrito na Política de Privacidade.
+                                            </small>
+                                        </label>
                                         <br>
                                     </div>
                                     <br>
@@ -171,11 +143,12 @@
                 <!-- CARD DECK -->
                 <div class="card-deck p-2 text-center  ">
                      <h1 class="text-white text-center col-12 pb-2  ">Confira os benefícios que os planos</h1>
+                     <!-- CARD 1 -->
                       <div id="card-1" class="card">
                         <div class="card-body">
                           <i class="fas fa-hospital  font-size-icons"></i>
                           <h5 class="card-title">Hospital</h5>
-                          <img class="img img-fluid rounded " src="{% static 'img/unidade-1.png' %}">
+                          <img class="img img-fluid rounded " src="{% static 'img/unidade-1-v3.png' %}">
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 
                           <!-- Trigger do Modal CARD 1 -->
@@ -185,7 +158,7 @@
                             
                         </div>
                       </div>
-                      <!-- FINAL DO CARD 1 -->
+                      <!-- FINAL DO CARD 1 ------------------------ -->
                       <!-- MODAL CARD 1 -->
                         <div class="modal fade" id="modal-card-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-lg" role="document">
@@ -197,9 +170,9 @@
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                              <div class="modal-body text-white">
+                              <div class="modal-body text-dark">
                                 <h3  id="exampleModalLabel" class="modal-title">Unimed São Carlos - Unidade 1</h3>
-                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-1.png' %}">
+                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-1-v3.png' %}">
                                 <div class="mt-3 p-1 ">
                                      Na Unimed São Carlos - Unidade 1, você encontra um atendimento médico completo, com profissionais especializados prontos para cuidar de você e da sua família. Oferecemos consultas, exames e tratamentos em diversas especialidades, tudo em um ambiente acolhedor e com tecnologia de ponta.
                                 </div>
@@ -220,19 +193,19 @@
                                
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-light p-2 close" data-dismiss="modal"><i class="fas fa-chevron-circle-left mr-1"></i>Voltar</button>
+                                <button type="button" target class="btn btn-light p-2 close" data-dismiss="modal"><i class="fas fa-chevron-circle-left mr-1"></i>Voltar</button>
                               </div>
                             </div>
                           </div>
                         </div>
                         <!-- FINAL DO MODAL CARD 1 -->
 
-                        <!-- CARD 2 -->
+                        <!-- CARD 2 -------------------------------------- -->
                       <div id="card-2" class="card">
                         <div class="card-body">
                           <i class="fas fa-clinic-medical font-size-icons"></i>
                           <h5 class="card-title">Pronto Atendimento</h5>
-                          <img class="img img-fluid rounded" src="{% static 'img/unidade-2.png' %}">
+                          <img class="img img-fluid rounded" src="{% static 'img/unidade-2-v5.png' %}">
                           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                           <!-- Trigger do Modal CARD 2 -->
                           <button id="btn-card-2" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-card-2">
@@ -252,9 +225,9 @@
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                              <div class="modal-body text-white">
+                              <div class="modal-body text-dark">
                                 <h3  id="exampleModalLabel" class="modal-title">Unimed São Carlos - Unidade 2</h3>
-                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-2.png' %}">
+                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-2-v5.png' %}">
                                 <div class="mt-3 p-1 ">
                                      Na Unimed São Carlos - Unidade 1, você encontra um atendimento médico completo, com profissionais especializados prontos para cuidar de você e da sua família. Oferecemos consultas, exames e tratamentos em diversas especialidades, tudo em um ambiente acolhedor e com tecnologia de ponta.
                                 </div>
@@ -287,7 +260,7 @@
                         <div class="card-body">
                           <i class="fas fa-user-md font-size-icons"></i>
                           <h5 class="card-title">Médicos Especialistas</h5>
-                          <img class="img img-fluid rounded" src="{% static 'img/unidade-1.png' %}">
+                          <img class="img img-fluid rounded" src="{% static 'img/consultas-medicas.png' %}">
                           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                            <!-- Trigger do Modal CARD 2 -->
                           <button id="btn-card-3" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-card-3">
@@ -307,9 +280,9 @@
                                   <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                              <div class="modal-body text-white">
+                              <div class="modal-body text-dark">
                                 <h3  id="exampleModalLabel" class="modal-title">Médicos Especialistas</h3>
-                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-2.png' %}">
+                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/consultas-medicas.png' %}">
                                 <div class="mt-3 p-1 ">
                                      Na Unimed São Carlos - Unidade 1, você encontra um atendimento médico completo, com profissionais especializados prontos para cuidar de você e da sua família. Oferecemos consultas, exames e tratamentos em diversas especialidades, tudo em um ambiente acolhedor e com tecnologia de ponta.
                                 </div>
