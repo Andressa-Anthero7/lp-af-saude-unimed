@@ -27,4 +27,4 @@ USER django
 EXPOSE 8000
 
 # Comando padrão (fallback) para rodar o contêiner
-CMD ["gunicorn", "base.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:8000"]
