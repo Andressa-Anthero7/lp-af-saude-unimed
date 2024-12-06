@@ -54,14 +54,15 @@
 
 
 </head>
-<body>
+<body >
     <!-- Header -->
-      <header class="m-0 p-0 ">
+      <header class="m-0 pt-5 ">
+           
             <div id="div-logo" class="col-12 text-center">
-                <img src="{% static 'img/logo.png' %}" class="img img-fluid m-0 p-0  " id="img-logo" alt="LOGO MARCA">
+                <img src="{% static 'img/logo.webp' %}" class="img img-fluid" loading="lazy" id="img-logo" alt="LOGO MARCA">
 
-                <span class="col-8 text-center m-0 p-0">
-                    <img src="{% static 'img/logo_unimed.png' %}" class="img img-fluid " id="img-logo-plano" alt="LOGO MARCA DO PLANO DE SAÚDE">
+                <span class="col-8 text-center">
+                    <img src="{% static 'img/logo_unimed.webp' %}" loading="lazy" class="img img-fluid " id="img-logo-plano" alt="LOGO MARCA DO PLANO DE SAÚDE">
                 </span>
 
                  
@@ -80,7 +81,7 @@
                         <h1 id="header-contrate-plano">CONTRATE SEU PLANO</h1>
                         
                         <!-- IMG DESTAQUE PARA MOBILE (VISIVIEL SOMENTE EM MOBILE)-->
-                        <img src="{% static 'img/hospital-unimed-v7.png' %}" id="destaque-mobile" class=" m-0 p-0">
+                        <img src="{% static 'img/hospital-unimed-v7.webp' %}" loading="lazy" id="destaque-mobile" class=" m-0 p-0" alt="hospital-unimed-mobile">
 
 
                         <!-- FORMULÁRIO DE LEADS -->
@@ -179,7 +180,7 @@
                 <div id="beneficios-plano-saude" class="p-3 m-0 ">
                     <!-- HEADER DO SESSÃO BENEFÍCIOS -->
                     <div class="bg-header-beneficios">
-                        <img src="{% static 'img/logo_unimed.png' %}" class="img img-fluid m-0 p-0" id="logo-plano-sessao-beneficios">
+                        <img src="{% static 'img/logo_unimed.webp' %}" class="img img-fluid m-0 p-0" id="logo-plano-sessao-beneficios" alt="logo_unimed-meio">
                     </div>
                     <!-- FINAL DO HEADER SESSÃO BENEFÍCIOS -->
                 </div>
@@ -191,7 +192,7 @@
                         <div class="card-body">
                           <i class="fas fa-hospital  font-size-icons"></i>
                           <h5 class="card-title">Hospital</h5>
-                          <img class="img img-fluid rounded " src="{% static 'img/unidade-1-v3.png' %}">
+                          <img class="img img-fluid rounded " loading="lazy" src="{% static 'img/unidade-1-v3.webp' %}" alt="hospital">
                           <p class="card-text">Na Unimed São Carlos - Unidade 1, você encontra um atendimento médico completo, com profissionais especializados prontos para cuidar de você e da sua família. Oferecemos consultas, exames e tratamentos em diversas especialidades, tudo em um ambiente acolhedor e com tecnologia de ponta.</p>
 
                           <!-- Trigger do Modal CARD 1 -->
@@ -215,7 +216,7 @@
                               </div>
                               <div class="modal-body text-dark">
                                 <h3  id="exampleModalLabel" class="modal-title">Unimed São Carlos - Unidade 1</h3>
-                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-1-v3.png' %}">
+                                <img class="img img-fluid img-modal rounded" loading="lazy" src="{% static 'img/unidade-1-v3.webp' %}" alt="unidade-1-modal">
                                 <div class="mt-3 p-1 ">
                                      Na Unimed São Carlos - Unidade 1, você encontra um atendimento médico completo, com profissionais especializados prontos para cuidar de você e da sua família. Oferecemos consultas, exames e tratamentos em diversas especialidades, tudo em um ambiente acolhedor e com tecnologia de ponta.
                                 </div>
@@ -248,7 +249,7 @@
                         <div class="card-body">
                           <i class="fas fa-clinic-medical font-size-icons"></i>
                           <h5 class="card-title">Pronto Atendimento</h5>
-                          <img class="img img-fluid rounded" src="{% static 'img/unidade-2-v5.png' %}">
+                          <img class="img img-fluid rounded" loading="lazy" src="{% static 'img/unidade-2-v5.webp' %}" alt="unidade-2-card">
                           <p class="card-text">Unidade II, no prédio onde funcionava a antiga Casa de Saúde, na Vila Nery. O Hospital vem ser referência na região, oferecendo avançado complexo de atenção à saúde, em área de mais de 6 mil m².</p>
                           <!-- Trigger do Modal CARD 2 -->
                           <button id="btn-card-2" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-card-2">
@@ -270,7 +271,7 @@
                               </div>
                               <div class="modal-body text-dark">
                                 <h3  id="exampleModalLabel" class="modal-title">Unimed São Carlos - Unidade 2</h3>
-                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/unidade-2-v5.png' %}">
+                                <img class="img img-fluid img-modal rounded" loading="lazy" src="{% static 'img/unidade-2-v5.webp' %}" alt="unidade-2">
                                 <div class="mt-3 p-1 ">
                                      Unidade II, no prédio onde funcionava a antiga Casa de Saúde, na Vila Nery. O Hospital vem ser referência na região, oferecendo avançado complexo de atenção à saúde, em área de mais de 6 mil m².
                                 </div>
@@ -303,7 +304,7 @@
                         <div class="card-body">
                           <i class="fas fa-user-md font-size-icons"></i>
                           <h5 class="card-title">Médicos Especialistas</h5>
-                          <img class="img img-fluid rounded" src="{% static 'img/consultas-medicas.png' %}">
+                          <img class="img img-fluid rounded" loading="lazy" src="{% static 'img/consultas-medicas.webp' %}" alt="consultas-medicas-card">
                           <p class="card-text">Atendimento com Especialistas Unimed São Carlos: Na Unimed São Carlos, você conta com uma ampla rede de médicos especialistas prontos para cuidar de você e de sua família em cada etapa da sua jornada de saúde.</p>
                            <!-- Trigger do Modal CARD 2 -->
                           <button id="btn-card-3" class="btn btn-outline-primary" data-toggle="modal" data-target="#modal-card-3">
@@ -325,7 +326,7 @@
                               </div>
                               <div class="modal-body text-dark">
                                 <h3  id="exampleModalLabel" class="modal-title">Médicos Especialistas</h3>
-                                <img class="img img-fluid img-modal rounded"  src="{% static 'img/consultas-medicas.png' %}">
+                                <img class="img img-fluid img-modal rounded" loading="lazy" src="{% static 'img/consultas-medicas.webp' %}" alt="consultas-medicas">
                                 <div class="mt-3 p-1 ">
                                      Na Unimed São Carlos, você conta com uma ampla rede de médicos especialistas prontos para cuidar de você e de sua família em cada etapa da sua jornada de saúde. Nossa equipe é composta por profissionais altamente qualificados, em diversas áreas de especialidade, desde cardiologia e dermatologia até ortopedia e ginecologia, para que você receba o melhor cuidado possível, próximo de casa.
 

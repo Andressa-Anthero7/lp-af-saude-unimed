@@ -20,6 +20,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 1em; /* Espaçamento entre as logos */
+
 }
 
 /* LOGOS no header */
@@ -280,12 +281,13 @@ small {
 }
 
 @media(min-width: 1024px) {
+
     #destaque-mobile {
         display: none;
     }
 
     #container {
-        background-image: url('/static/img/hospital-unimed-v7.png');
+        background-image: url('/static/img/hospital-unimed-v7.webp');
         background-repeat: no-repeat;
         background-position: 380px -5px;
         min-height: 950px;

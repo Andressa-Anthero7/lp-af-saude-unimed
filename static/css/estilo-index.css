@@ -20,6 +20,7 @@ header {
     align-items: center;
     justify-content: center;
     gap: 1em; /* Espaçamento entre as logos */
+
 }
 
 /* LOGOS no header */
@@ -280,6 +281,7 @@ small {
 }
 
 @media(min-width: 1024px) {
+    
     #destaque-mobile {
         display: none;
     }
