@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 
+html{
+    overflow-x:hidden;
+}
 body {
     background: rgb(0, 104, 55, 1);
     background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
