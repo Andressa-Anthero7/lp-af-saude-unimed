@@ -47,6 +47,44 @@ li {
     color: #4767ae;
 }
 
+/* Estilos do modal */
+.modal {
+    position: fixed; /* Fixa o modal na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar perfeitamente */
+    width: 90vw; /* Largura do modal será 90% da largura da tela */
+    max-width: 100%; /* Evita que o modal ultrapasse a tela */
+    height: 80vh; /* Altura do modal será 80% da altura da tela */
+    max-height: 100vh; /* Evita que o modal ultrapasse a altura da tela */
+    background-color: white; /* Cor de fundo do modal */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: auto; /* Se o conteúdo for grande, aparecerá uma rolagem */
+    z-index: 9999; /* Garante que o modal fique acima de outros elementos */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding no tamanho total */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    width: 100%; /* O conteúdo do modal ocupa toda a largura do modal */
+    height: auto; /* A altura do conteúdo é automática */
+    max-height: 100%; /* Limita a altura máxima para não ultrapassar a altura do modal */
+    overflow-y: auto; /* Adiciona rolagem interna, se necessário */
+}
+
+/* Botão de fechar (exemplo) */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
 .modal-body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
 }
@@ -82,6 +120,10 @@ small {
 /* ESTILIZAÇÃO DAS MEDIAS QUERIES */
 
 @media(max-width: 320px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
     #img-logo {
         max-height: 8em;
         min-width: 10em;
@@ -131,6 +173,11 @@ small {
 }
 
 @media(min-width: 321px) and (max-width: 375.99px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
+
     #img-logo {
         max-height: 8em;
         min-width: 10em;
@@ -179,6 +226,11 @@ small {
 }
 
 @media(min-width: 376px) and (max-width: 393.97px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
+
     #img-logo {
         max-height: 8em;
         min-width: 10em;
@@ -226,6 +278,11 @@ small {
 }
 
 @media(min-width: 394px) and (max-width: 429.97px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
+
     #img-logo {
         max-height: 8em;
         min-width: 10em;
@@ -260,6 +317,11 @@ small {
 }
 
 @media(min-width: 430px) and (max-width: 767px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
+    
     #img-logo {
         max-height: 8em;
         min-width: 10em;
