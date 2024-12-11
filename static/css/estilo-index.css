@@ -290,7 +290,7 @@ small {
     }
 
     #container {
-        background-image: url('/static/img/hospital-unimed-v7.png');
+        background-image: url('/static/img/hospital-unimed-v7.webp');
         background-repeat: no-repeat;
         background-position: 380px -5px;
         min-height: 950px;
