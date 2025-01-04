@@ -12,7 +12,7 @@ __pycache__/
 *.pyo
 
 # Ignorar arquivos de banco de dados local
-*.sqlite3
+#*.sqlite3
 
 # Ignorar arquivos estáticos gerados
 static/

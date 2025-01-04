@@ -27,7 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*','www.afunimedsaocarlos.com.br','afunimedsaocarlos','54.163.93.29']
 
-
+CSRF_TRUSTED_ORIGINS = [
+	'https://afunimedsaocarlos.com.br',
+ 	'https://www.afunimedsaocarlos.com.br',
+	'https://54.163.93.29',
+]
 # Application definition
 
 INSTALLED_APPS = [
