@@ -67,7 +67,7 @@
                                             formData.append('status_envelope', 'fa-envelope-open-text');
 
                                             const request = new XMLHttpRequest();
-                                            request.open('POST', 'http://127.0.0.1:8000/status_leads/{{lead.pk}}/', true);
+                                            request.open('POST', 'http://afunimedsaocarlos.com.br/status_leads/{{lead.pk}}/', true);
                                             
                                             // Adiciona CSRF token no cabeçalho
                                             const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
