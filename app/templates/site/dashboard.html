@@ -4,121 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="300">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WV84Z5WL4H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-WV84Z5WL4H');
-    </script>
-
-    <title> DASHBOARD - AF Saúde e Benefícios - Unimed</title>
-    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
-
-
+    <title>Norden- AF Saúde e Benefícios</title>
+    
 
     <!-- NORMALIZE.CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-    <!-- Bootstrap 4 CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <!-- Font Awesome 5 CDN -->
-    <script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
-
     <!-- Jquery CDN --> 
      <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
+    <!-- Boostrap 4 CDN  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilo-dashboard.css' %}">
-    <style type="text/css">
-        body{
-            font-family: "Kanit", sans-serif;
-        }
+     
 
-        header{
-            background: rgb(0, 104, 55, 1);
-            background: -moz-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-            background: -webkit-linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-            background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
-        }
-        li {
-            list-style: none;
-            min-height: 0.5em;
-            font-size: 0.8em;
-            border:1px solid lightgray;
-           
-        }
 
-        li:hover{
-            transform: scale(1.1);
-        }
-
-        ul{
-           height: 100%;
-           margin-bottom: 0.5em;
-           overflow-x:hidden;
-           height: 90%;
-        }
-
-        a{
-            text-decoration: none;
-        }
-
-        footer{
-            position: absolute;
-            top:90%;
-        }
-
-    </style>
 
     <!-- Font Awesome 5 CDN -->
     <script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="bg-success text-white text-center p-0 m-0">
+         <!-- Preloader -->
+      <div id="preloader">
+        <div class="spinner "><img src="{% static 'img/logo.webp' %}" width="70px" height="70px"></div>
+      </div>
+
+    <header>
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-2 ">
-                    <!-- LOGO -->
-                    <img src="{% static 'img/logo.webp' %}" alt="Logo AF SAÚDE" class="img img-fluid p-2" width="100" height="50">
-                </div>
-                <div class="col-md-10">
-                    <!-- TÍTULO E DESCRIÇÃO -->
-                    <h3>AF Saúde e Benefícios</h3>
-                    <p>Sua escolha inteligente para qqqplanos de saúde Unimed em São Carlosssaaaaqqqqq1111132312.</p>
-                </div>
-                <div class="col-md-12 m-0 p-0">Olá,{{request.user|capfirst}}, você tem {{leads|length}} Leads.</div>
+            <div class="logo-container m-0 p-0">
+                <img class="img img-fluid" id="logo-af" src="{% static 'img/logo.webp' %}" alt="AF Saúde" loading="lazy">
+                <img class="img img-fluid" id="logo-plano" src="{% static 'img/logo_unimed.webp' %}" alt="Plano" loading="lazy">
             </div>
         </div>
     </header>
 
-    <!-- CONTAINER PRINCIPAL -->
-    <div class="container mt-4 text-dark">
-        <h1 class="no-wrap m-0 p-0">Dashboard Leads</h1>
-        <!-- DISPLAY DE LEADS -->
-        <div class="m-0 p-0 border border-dark rounded text-center">
-            <ul class="border border-dark rounded m-0 p-0">
-                {% if leads %}
+    <main>
+        <!-- CONTAINER -->
+        <div class="container container-conteudo m-0 p-2 col-12">
+            <div class=" m-0 p-2">Olá,{{request.user|capfirst}}, você tem {{quantidade_leads|length}} Leads.</div>
+            <!-- CAIXA DE LEADS -->
+            <div class=" p-2">
+                <h2 class="text-white font-weight-bold no-wrap">Caixa de Leads</h2>
+                <div id="display-leads" class="border border-light rounded bg-white m-lg-2" >
+                    <ul class="">
+                         {% if leads %}
                     {% for lead in leads %}
                     <!-- BOX ITEM DO LEADS -->
-                    <li class="text-left pl-5 rounded" >
-                        <div class="btn text-center text-dark" data-toggle="modal" data-target="#lead-{{ lead.pk }}">
+                    <li class="leads-{{lead.pk}}" style="list-style: none;" data-toggle="modal" data-target="#lead-{{ lead.pk }}" >
+                        <div class="btn  text-dark" >
                             <strong>
-                                <span>Data: {{ lead.data_recebimento|slice:":16" }}</span>
-                                <span>Nome: {{ lead.nome_leads|capfirst }}</span>
-                                <span>Whatsapp: {{ lead.whats_app_leads}}</span>
+                                <!-- Envelope do Leads -->
+                                <span class="mr-1"><i class="fas {{lead.status_envelope}}"></i></span>
+                                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
+                                <script type="text/javascript">
+                                    $(document).ready(function() {
+                                        $('.leads-{{lead.pk}}').on('click', function() {
+                                            const formData = new FormData();
+
+                                            formData.append('status_envelope', 'fa-envelope-open-text');
+
+                                            const request = new XMLHttpRequest();
+                                            request.open('POST', 'http://127.0.0.1:8000/status_leads/{{lead.pk}}/', true);
+                                            
+                                            // Adiciona CSRF token no cabeçalho
+                                            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                                            request.setRequestHeader('X-CSRFToken', csrftoken);
+                                        
+                                            // Define callback para sucesso ou erro
+                                            request.onload = function() {
+                                                if (request.status === 200) {
+                                                    alert('status 200')
+                                                } else {
+                                                    alert('Erro ao atualizar status.');
+                                                }
+                                            };
+
+                                            request.onerror = function() {
+                                                alert('Erro na requisição.');
+                                            };
+
+                                            request.send(formData);
+                                            
+
+                                        });
+                                    });
+                                </script>
+
+                                <span class="info-leads">Data: {{ lead.data_recebimento|slice:"8:10"}}/{{ lead.data_recebimento|slice:"5:7" }}/{{ lead.data_recebimento|slice:":4" }} - {{lead.data_recebimento|slice:"11:16"}} </span>
+                                <span class="info-leads">Nome: {{ lead.nome_leads|capfirst }}</span>
+                                <span class="info-leads">Whatsapp: {{ lead.whats_app_leads}}</span>
                             <strong> 
                         </div>
                     </li>
                     <!--FINAL BOX ITEM DO LEADS -->
                     <!-- Modal -->
-                    <div class="modal fade" id="lead-{{ lead.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade text-dark" id="lead-{{ lead.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -130,47 +113,84 @@
                           <div class="modal-body">
                             <p><strong>Data:</strong> {{ lead.data_recebimento }}</p>
                             <p><strong>Whatsapp:</strong> {{ lead.whats_app_leads }}</p>
+                            
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            <script type="text/javascript">
-                                $(document).ready(function(){
-                                    let whatsleads = '{{lead.whats_app_leads}}';
-                                    let whatsappFormatado = whatsleads.replace(/[()\s-]/g, '');
-                                    let linkWhatsapp = 'https://wa.me/55' + whatsappFormatado;
+                            
+                            <!-- Modal Deletar Leads -->
+                            <button  class="btn fas fa-trash-alt mr-5 p-2" style="color: red;font-size: 2em;" data-toggle="modal" data-target="#modal-delete-leads-{{lead.pk}}"></button>
+                            <div class="modal fade p-5 " id="modal-delete-leads-{{lead.pk}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Exclusão do Leads Id - {{lead.pk}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body p-2 text-center">
+                                    <form class="p-3">
+                                        <div>Digite remover para confirmar a exclusão do Leads - Id-{{lead.pk}}</div>
+                                        <div>
+                                            <input class="col-12 form" type="text" placeholder="Digite remover e clique no botão Confirma Exclusão"></div>
+                                        </div>
+                                    </form>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-danger">Confirma Exclusão</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
 
-                                    // Definindo o href da tag <a>
-                                    $('.btn-success').attr('href', linkWhatsapp);
-                                });
-                            </script>
-                            <a class=" btn btn-success" href="#"  target="_blank">
-                                <i class="fab fa-whatsapp"> Iniciar Atendimento</i>
+                            <button id="btn-fechar-modal-leads" type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Fechar</button>
+
+                            <a class="btn btn-success" href="https://wa.me/55{{lead.whats_app_leads}}"  target="_blank"   >
+                                <i class="fab fa-whatsapp text-white"> Iniciar Atendimento</i>
                             </a>
+
                           </div>
                         </div>
                       </div>
                     </div>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $(document).on('blur','.modal', function(){
+                                window.location.reload();
+                            })
+                        });
+                    </script>
                     <!-- FINAL DO Modal -->
                     {% endfor %}
                 {% else %}
                     <li>Não há leads</li>
                 {% endif %}
-            </ul>
-        </div>
-    </div>
-    <!-- FINAL CONTAINER PRINCIPAL -->
+                    </ul>
+                </div>
+            </div>
+            
+            
 
-    <!-- FOOTER -->
-    <footer class=" justify-content-center align-items-center text-center text-dark ">
+        </div>
+        <!-- FINAL DO CONTAINER -->
+       
+    
+    </main>
+
+     <!-- FOOTER -->
+    <footer class="footer row justify-content-center align-items-center text-center p-3 text-white">
         <i class="fa fa-copyright mr-2" aria-hidden="true"></i>
         <div class="mr-2">Antherus - Desenvolvimento Web</div>
         <small><i class="fa fa-whatsapp mr-1" aria-hidden="true"></i><span>(16) 99337-9492</span></small>
     </footer>
-
+   
+    <!-- jS -->
+     <script type="text/javascript" src="{% static 'js/script-index.js' %}"></script>
     
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+           

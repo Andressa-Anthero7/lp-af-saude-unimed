@@ -55,6 +55,17 @@ def dashboard(request,user):
     leads = Leads.objects.all().order_by('-data_recebimento')
     return render(request, 'site/dashboard.html', {'leads': leads})
 
+def status_envelope_leads(request,pk):
+    if request.method == "POST":
+        print('post')
+        novo_status_envelope_leads = 'fa-envelope-open-text'
+        Leads.objects.filter(pk=pk).update(status_envelope=novo_status_envelope_leads)
+        leads = Leads.objects.all().order_by('-data_recebimento')
+        quantidade_leads = Leads.objects.all()
+        return redirect(reverse('dashboard',args=[request.user]))
+    else:
+        return redirect(reverse('dashboard',args=[request.user]))
+
 def custom_login(request):
     if request.method == 'POST':
         username = request.POST['username']
