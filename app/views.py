@@ -4,12 +4,13 @@ from .models import Leads, Config_WhatsApp
 from datetime import datetime
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
+
 
 # Create your views here.
 def index(request):
-    
-        
-
+    # Se for POST/REQUISIÇÃO DO FORM DA LP
     if request.method == 'POST':
         # Capturar os dados do formulário
         nome_leads = request.POST.get('nome') 
@@ -44,6 +45,7 @@ def index(request):
             print("Falha ao enviar a mensagem.")
             print(f"Status code: {response.status_code}")
             return render(request, 'site/agradecimento.html')
+    # SE NAO FOR POR É REQUISIÇAO PELO GET
     else:
         return render(request, 'site/index.html')
 
@@ -53,7 +55,8 @@ def agradecimento(request):
 @login_required
 def dashboard(request,user):
     leads = Leads.objects.all().order_by('-data_recebimento')
-    return render(request, 'site/dashboard.html', {'leads': leads})
+    quantidade_leads =  Leads.objects.all()
+    return render(request, 'site/dashboard.html', {'leads': leads,'quantidade_leads':quantidade_leads})
 
 def status_envelope_leads(request,pk):
     if request.method == "POST":
@@ -83,3 +86,9 @@ def login_redirect(request):
     username = request.user.username
     url_redirect = f'/accounts/login/{username}/dashboard/'  # URL do dashboard
     return redirect(url_redirect)
+
+
+def remover_lead(request,pk):
+    lead_remover = get_object_or_404(Leads, pk=pk)
+    lead_remover.delete()
+    return JsonResponse({'Status': 'Leads Removido com Sucesso!!'}, status=200)

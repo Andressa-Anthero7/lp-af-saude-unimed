@@ -6,9 +6,6 @@
     box-sizing: border-box;
 }
 
-html{
-    overflow-x:hidden;
-}
 body {
     background: rgb(0, 104, 55, 1);
     background: linear-gradient(90deg, rgba(0, 104, 55, 1) 0%, rgba(47, 110, 63, 1) 100%);
@@ -27,7 +24,7 @@ header {
 }
 
 /* LOGOS no header */
-/* ------- */
+/* --- */
 #img-logo, #img-logo-plano {
     max-height: 8em;
     width: auto;
@@ -50,6 +47,44 @@ li {
     color: #4767ae;
 }
 
+/* Estilos do modal */
+.modal {
+    position: fixed; /* Fixa o modal na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar perfeitamente */
+    width: 90vw; /* Largura do modal será 90% da largura da tela */
+    max-width: 100%; /* Evita que o modal ultrapasse a tela */
+    height: 80vh; /* Altura do modal será 80% da altura da tela */
+    max-height: 100vh; /* Evita que o modal ultrapasse a altura da tela */
+    background-color: white; /* Cor de fundo do modal */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: auto; /* Se o conteúdo for grande, aparecerá uma rolagem */
+    z-index: 9999; /* Garante que o modal fique acima de outros elementos */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding no tamanho total */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    width: 100%; /* O conteúdo do modal ocupa toda a largura do modal */
+    height: auto; /* A altura do conteúdo é automática */
+    max-height: 100%; /* Limita a altura máxima para não ultrapassar a altura do modal */
+    overflow-y: auto; /* Adiciona rolagem interna, se necessário */
+}
+
+/* Botão de fechar (exemplo) */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
 .modal-body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
 }
@@ -67,7 +102,7 @@ small {
     cursor: not-allowed;
 }
 
-/* ESTILIZAÇÃO DAS IMAGENS E FORMULÁRIOS */
+/* ESTILIZAÇÃO DAS IMAGENS E FORMULÁRIOS   */
 #img-logo {
     max-height: 8em;
     width: auto;
@@ -85,11 +120,16 @@ small {
 /* ESTILIZAÇÃO DAS MEDIAS QUERIES */
 
 @media(max-width: 320px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
     #img-logo {
         max-height: 8em;
         min-width: 10em;
         position: relative;
         left: -6em;
+        top: 1.5em;
     }
 
     #img-logo-plano {
@@ -97,20 +137,74 @@ small {
         width: 10em;
         position: relative;
         left: 4em;
-        top: -7em;
+        top: -5.5em;
     }
 
     #conteudo {
         position: relative;
-        top: -8em;
+        top: -2em;
     }
 
     #destaque-mobile {
         position: relative;
         top: 0em;
-        left: -9em;
+        left: -5em;
         max-height: 25em;
-        min-width: 60%;
+        width: 150%;
+        border:5px solid red;
+    }
+
+    #div-form {
+        width: 110%;
+        position: relative;
+        left: -1em;
+        top: -5em;
+    }
+
+    #beneficios-plano-saude {
+        position: relative;
+        top: -5em;
+    }
+
+    .card-deck {
+        position: relative;
+        top: -5em;
+    }
+}
+
+@media(min-width: 321px) and (max-width: 375.99px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
+
+    #img-logo {
+        max-height: 8em;
+        min-width: 10em;
+        position: relative;
+        left: -6em;
+        top: 2em;
+    }
+
+    #img-logo-plano {
+        height: 10em;
+        width: 10em;
+        position: relative;
+        left: 5em;
+        top:-5em;
+    }
+
+    #conteudo {
+        position: relative;
+        top: -2em;
+    }
+
+    #destaque-mobile {
+        position: relative;
+        top: -1em;
+        left: -8em;
+        max-height: 25em;
+        width: 150%;
     }
 
     #div-form {
@@ -131,7 +225,12 @@ small {
     }
 }
 
-@media(min-width: 321px) and (max-width: 393px) {
+@media(min-width: 376px) and (max-width: 393.97px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
+
     #img-logo {
         max-height: 8em;
         min-width: 10em;
@@ -157,7 +256,7 @@ small {
         top: -1em;
         left: -8em;
         max-height: 25em;
-        min-width: 60%;
+        width: 150%;
     }
 
     #div-form {
@@ -178,19 +277,25 @@ small {
     }
 }
 
-@media(min-width: 394px) and (max-width: 767px) {
+@media(min-width: 394px) and (max-width: 429.97px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
+
     #img-logo {
         max-height: 8em;
         min-width: 10em;
         position: relative;
-        left: -2em;
+        left: -6em;
+        top: 2em;
     }
 
     #img-logo-plano {
         height: 10em;
         position: relative;
-        left: 0em;
-        top: 0em;
+        left: 5em;
+        top: -5em;
     }
 
     #conteudo {
@@ -208,6 +313,44 @@ small {
     #div-form, #beneficios-plano-saude, .card-deck {
         position: relative;
         top: -10em;
+    }
+}
+
+@media(min-width: 430px) and (max-width: 767px) {
+    .modal {
+        width: 95vw; /* Ajuste para telas muito pequenas */
+        height: 90vh; /* Ajuste para maior altura em dispositivos móveis */
+    }
+    
+    #img-logo {
+        max-height: 8em;
+        min-width: 10em;
+        position: relative;
+        left: -2em;
+    }
+
+    #img-logo-plano {
+        height: 10em;
+        position: relative;
+        left: 0em;
+        top: 0em;
+    }
+
+    #conteudo {
+        position: relative;
+        top: 0em;
+    }
+
+    #destaque-mobile {
+        position: relative;
+        top: 0em;
+        left: -8em;
+        width: 140%;
+    }
+
+    #div-form, #beneficios-plano-saude, .card-deck {
+        position: relative;
+        top: -5em;
     }
 }
 
@@ -235,14 +378,14 @@ small {
 
     #destaque-mobile {
         position: relative;
-        top: -2em;
+        top: 0em;
         left: -14em;
         width: 140%;
     }
 
     #conteudo {
         position: relative;
-        top: -2em;
+        top: 0em;
     }
 
     #div-form {
@@ -284,7 +427,7 @@ small {
 }
 
 @media(min-width: 1024px) {
-    
+
     #destaque-mobile {
         display: none;
     }
