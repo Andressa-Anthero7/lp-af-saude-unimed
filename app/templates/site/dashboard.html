@@ -64,7 +64,7 @@
                                             formData.append('status_envelope', 'fa-envelope-open-text');
 
                                             const request = new XMLHttpRequest();
-                                            request.open('POST', 'http://127.0.0.1:8000/status_leads/{{lead.pk}}/', true);
+                                            request.open('POST', 'https://afunimedsaocarlos.com.br/status_leads/{{lead.pk}}/', true);
                                             
                                             // Adiciona CSRF token no cabeçalho
                                             const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
@@ -137,7 +137,7 @@
                                           // ENVIAR REQUISICAO COM DELETE
                                             $(document).on('click', '.btn-confirmar-exclusao-leads-{{lead.pk}}', function () {
                                                 const leadId = {{lead.pk}};
-                                                const url = `http://127.0.0.1:8000/remover_lead/${leadId}/`; // URL dinâmica para o endpoint de exclusão
+                                                const url = `https://afunimedsaocarlos.com.br/remover_lead/${leadId}/`; // URL dinâmica para o endpoint de exclusão
                                                 
                                                 // Criação da requisição
                                                 const request = new XMLHttpRequest();
